@@ -1,0 +1,377 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" role="img" aria-labelledby="title desc">
+<title id="title">Mo's algorithm: Alternating order</title>
+<desc id="desc">Animated distinct-count window. Teal is the active window, amber is the target range. Frames retain exact counters; large traces are sampled.</desc>
+<rect width="1200" height="440" rx="16" fill="#0f172a"/>
+<g font-family="system-ui, sans-serif" fill="#e2e8f0">
+<text x="40" y="42" font-size="25" font-weight="700">Mo's algorithm / Alternating</text>
+<text x="40" y="72" font-size="15">n=12 · queries=7 · block=3 · 52 / 52 events · 13.0s loop</text>
+<rect x="60" y="150" width="1080" height="48" fill="#1e293b" stroke="#64748b"/>
+<path d="M 60.00 150 v48" stroke="#475569"/><path d="M 150.00 150 v48" stroke="#475569"/><path d="M 240.00 150 v48" stroke="#475569"/><path d="M 330.00 150 v48" stroke="#475569"/><path d="M 420.00 150 v48" stroke="#475569"/><path d="M 510.00 150 v48" stroke="#475569"/><path d="M 600.00 150 v48" stroke="#475569"/><path d="M 690.00 150 v48" stroke="#475569"/><path d="M 780.00 150 v48" stroke="#475569"/><path d="M 870.00 150 v48" stroke="#475569"/><path d="M 960.00 150 v48" stroke="#475569"/><path d="M 1050.00 150 v48" stroke="#475569"/><path d="M 1140.00 150 v48" stroke="#475569"/><text x="105.00" y="180" text-anchor="middle" font-size="15">1</text><text x="195.00" y="180" text-anchor="middle" font-size="15">1</text><text x="285.00" y="180" text-anchor="middle" font-size="15">2</text><text x="375.00" y="180" text-anchor="middle" font-size="15">1</text><text x="465.00" y="180" text-anchor="middle" font-size="15">3</text><text x="555.00" y="180" text-anchor="middle" font-size="15">2</text><text x="645.00" y="180" text-anchor="middle" font-size="15">3</text><text x="735.00" y="180" text-anchor="middle" font-size="15">-4</text><text x="825.00" y="180" text-anchor="middle" font-size="15">1</text><text x="915.00" y="180" text-anchor="middle" font-size="15">5</text><text x="1005.00" y="180" text-anchor="middle" font-size="15">2</text><text x="1095.00" y="180" text-anchor="middle" font-size="15">5</text><text x="60" y="219" font-size="13">index 0</text><text x="1140" y="219" text-anchor="end" font-size="13">exclusive end 12</text>
+<text x="40" y="362" font-size="14" fill="#5eead4">Teal: active window [L, R)</text>
+<text x="370" y="362" font-size="14" fill="#fbbf24">Amber: target inclusive query</text>
+<text x="40" y="392" font-size="13">Large arrays use an overview strip; sampled frames skip intermediate states, never counter updates.</text>
+<g visibility="visible" data-frame="0">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.00000000;0.01923077;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="0.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 60.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="60.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="150.00" y="234" width="90.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #3: [1, 1] · active [0, 0) · distinct=0</text><text x="40" y="315" font-size="17">Moves=0 (L=0 / R=0) · additions=0 · removals=0 · frame 1/52</text></g><g visibility="hidden" data-frame="1">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.01923077;0.03846154;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="90.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 150.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="150.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="150.00" y="234" width="90.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #3: [1, 1] · active [0, 1) · distinct=1</text><text x="40" y="315" font-size="17">Moves=1 (L=0 / R=1) · additions=1 · removals=0 · frame 2/52</text></g><g visibility="hidden" data-frame="2">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.03846154;0.05769231;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="180.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 240.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="240.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="150.00" y="234" width="90.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #3: [1, 1] · active [0, 2) · distinct=1</text><text x="40" y="315" font-size="17">Moves=2 (L=0 / R=2) · additions=2 · removals=0 · frame 3/52</text></g><g visibility="hidden" data-frame="3">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.05769231;0.07692308;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="150.00" y="150" width="90.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 150.00 143 v-15 M 240.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="150.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="240.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="150.00" y="234" width="90.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #3: [1, 1] · active [1, 2) · distinct=1</text><text x="40" y="315" font-size="17">Moves=3 (L=1 / R=2) · additions=2 · removals=1 · frame 4/52</text></g><g visibility="hidden" data-frame="4">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.07692308;0.09615385;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="150.00" y="150" width="90.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 150.00 143 v-15 M 240.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="150.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="240.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="150.00" y="234" width="90.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #3: [1, 1] · active [1, 2) · distinct=1</text><text x="40" y="315" font-size="17">Moves=3 (L=1 / R=2) · additions=2 · removals=1 · frame 5/52</text></g><g visibility="hidden" data-frame="5">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.09615385;0.11538462;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="150.00" y="150" width="90.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 150.00 143 v-15 M 240.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="150.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="240.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #1: [0, 2] · active [1, 2) · distinct=1</text><text x="40" y="315" font-size="17">Moves=3 (L=1 / R=2) · additions=2 · removals=1 · frame 6/52</text></g><g visibility="hidden" data-frame="6">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.11538462;0.13461538;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="180.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 240.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="240.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #1: [0, 2] · active [0, 2) · distinct=1</text><text x="40" y="315" font-size="17">Moves=4 (L=2 / R=2) · additions=3 · removals=1 · frame 7/52</text></g><g visibility="hidden" data-frame="7">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.13461538;0.15384615;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 330.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="330.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #1: [0, 2] · active [0, 3) · distinct=2</text><text x="40" y="315" font-size="17">Moves=5 (L=2 / R=3) · additions=4 · removals=1 · frame 8/52</text></g><g visibility="hidden" data-frame="8">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.15384615;0.17307692;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 330.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="330.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #1: [0, 2] · active [0, 3) · distinct=2</text><text x="40" y="315" font-size="17">Moves=5 (L=2 / R=3) · additions=4 · removals=1 · frame 9/52</text></g><g visibility="hidden" data-frame="9">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.17307692;0.19230769;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 330.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="330.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="240.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #4: [2, 4] · active [0, 3) · distinct=2</text><text x="40" y="315" font-size="17">Moves=5 (L=2 / R=3) · additions=4 · removals=1 · frame 10/52</text></g><g visibility="hidden" data-frame="10">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.19230769;0.21153846;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 420.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="420.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="240.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #4: [2, 4] · active [0, 4) · distinct=2</text><text x="40" y="315" font-size="17">Moves=6 (L=2 / R=4) · additions=5 · removals=1 · frame 11/52</text></g><g visibility="hidden" data-frame="11">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.21153846;0.23076923;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="450.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 510.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="510.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="240.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #4: [2, 4] · active [0, 5) · distinct=3</text><text x="40" y="315" font-size="17">Moves=7 (L=2 / R=5) · additions=6 · removals=1 · frame 12/52</text></g><g visibility="hidden" data-frame="12">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.23076923;0.25000000;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="150.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 150.00 143 v-15 M 510.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="150.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="510.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="240.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #4: [2, 4] · active [1, 5) · distinct=3</text><text x="40" y="315" font-size="17">Moves=8 (L=3 / R=5) · additions=6 · removals=2 · frame 13/52</text></g><g visibility="hidden" data-frame="13">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.25000000;0.26923077;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="240.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 240.00 143 v-15 M 510.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="240.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="510.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="240.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #4: [2, 4] · active [2, 5) · distinct=3</text><text x="40" y="315" font-size="17">Moves=9 (L=4 / R=5) · additions=6 · removals=3 · frame 14/52</text></g><g visibility="hidden" data-frame="14">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.26923077;0.28846154;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="240.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 240.00 143 v-15 M 510.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="240.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="510.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="240.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #4: [2, 4] · active [2, 5) · distinct=3</text><text x="40" y="315" font-size="17">Moves=9 (L=4 / R=5) · additions=6 · removals=3 · frame 15/52</text></g><g visibility="hidden" data-frame="15">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.28846154;0.30769231;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="240.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 240.00 143 v-15 M 510.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="240.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="510.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [2, 5) · distinct=3</text><text x="40" y="315" font-size="17">Moves=9 (L=4 / R=5) · additions=6 · removals=3 · frame 16/52</text></g><g visibility="hidden" data-frame="16">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.30769231;0.32692308;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="150.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 150.00 143 v-15 M 510.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="150.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="510.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [1, 5) · distinct=3</text><text x="40" y="315" font-size="17">Moves=10 (L=5 / R=5) · additions=7 · removals=3 · frame 17/52</text></g><g visibility="hidden" data-frame="17">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.32692308;0.34615385;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="450.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 510.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="510.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 5) · distinct=3</text><text x="40" y="315" font-size="17">Moves=11 (L=6 / R=5) · additions=8 · removals=3 · frame 18/52</text></g><g visibility="hidden" data-frame="18">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.34615385;0.36538462;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="540.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 600.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="600.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 6) · distinct=3</text><text x="40" y="315" font-size="17">Moves=12 (L=6 / R=6) · additions=9 · removals=3 · frame 19/52</text></g><g visibility="hidden" data-frame="19">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.36538462;0.38461538;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="630.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 690.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="690.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 7) · distinct=3</text><text x="40" y="315" font-size="17">Moves=13 (L=6 / R=7) · additions=10 · removals=3 · frame 20/52</text></g><g visibility="hidden" data-frame="20">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.38461538;0.40384615;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="720.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 780.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="780.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 8) · distinct=4</text><text x="40" y="315" font-size="17">Moves=14 (L=6 / R=8) · additions=11 · removals=3 · frame 21/52</text></g><g visibility="hidden" data-frame="21">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.40384615;0.42307692;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="810.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 870.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="870.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 9) · distinct=4</text><text x="40" y="315" font-size="17">Moves=15 (L=6 / R=9) · additions=12 · removals=3 · frame 22/52</text></g><g visibility="hidden" data-frame="22">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.42307692;0.44230769;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="900.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 10) · distinct=5</text><text x="40" y="315" font-size="17">Moves=16 (L=6 / R=10) · additions=13 · removals=3 · frame 23/52</text></g><g visibility="hidden" data-frame="23">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.44230769;0.46153846;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="990.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 1050.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1050.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 11) · distinct=5</text><text x="40" y="315" font-size="17">Moves=17 (L=6 / R=11) · additions=14 · removals=3 · frame 24/52</text></g><g visibility="hidden" data-frame="24">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.46153846;0.48076923;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="1080.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 12) · distinct=5</text><text x="40" y="315" font-size="17">Moves=18 (L=6 / R=12) · additions=15 · removals=3 · frame 25/52</text></g><g visibility="hidden" data-frame="25">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.48076923;0.50000000;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="1080.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="60.00" y="234" width="1080.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #0: [0, 11] · active [0, 12) · distinct=5</text><text x="40" y="315" font-size="17">Moves=18 (L=6 / R=12) · additions=15 · removals=3 · frame 26/52</text></g><g visibility="hidden" data-frame="26">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.50000000;0.51923077;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="60.00" y="150" width="1080.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 60.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="60.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [0, 12) · distinct=5</text><text x="40" y="315" font-size="17">Moves=18 (L=6 / R=12) · additions=15 · removals=3 · frame 27/52</text></g><g visibility="hidden" data-frame="27">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.51923077;0.53846154;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="150.00" y="150" width="990.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 150.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="150.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [1, 12) · distinct=5</text><text x="40" y="315" font-size="17">Moves=19 (L=7 / R=12) · additions=15 · removals=4 · frame 28/52</text></g><g visibility="hidden" data-frame="28">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.53846154;0.55769231;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="240.00" y="150" width="900.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 240.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="240.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [2, 12) · distinct=5</text><text x="40" y="315" font-size="17">Moves=20 (L=8 / R=12) · additions=15 · removals=5 · frame 29/52</text></g><g visibility="hidden" data-frame="29">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.55769231;0.57692308;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="810.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 12) · distinct=5</text><text x="40" y="315" font-size="17">Moves=21 (L=9 / R=12) · additions=15 · removals=6 · frame 30/52</text></g><g visibility="hidden" data-frame="30">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.57692308;0.59615385;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="720.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 1050.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1050.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 11) · distinct=5</text><text x="40" y="315" font-size="17">Moves=22 (L=9 / R=13) · additions=15 · removals=7 · frame 31/52</text></g><g visibility="hidden" data-frame="31">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.59615385;0.61538462;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="630.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 10) · distinct=5</text><text x="40" y="315" font-size="17">Moves=23 (L=9 / R=14) · additions=15 · removals=8 · frame 32/52</text></g><g visibility="hidden" data-frame="32">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.61538462;0.63461538;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="540.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 870.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="870.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 9) · distinct=4</text><text x="40" y="315" font-size="17">Moves=24 (L=9 / R=15) · additions=15 · removals=9 · frame 33/52</text></g><g visibility="hidden" data-frame="33">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.63461538;0.65384615;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="450.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 780.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="780.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 8) · distinct=4</text><text x="40" y="315" font-size="17">Moves=25 (L=9 / R=16) · additions=15 · removals=10 · frame 34/52</text></g><g visibility="hidden" data-frame="34">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.65384615;0.67307692;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 690.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="690.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 7) · distinct=3</text><text x="40" y="315" font-size="17">Moves=26 (L=9 / R=17) · additions=15 · removals=11 · frame 35/52</text></g><g visibility="hidden" data-frame="35">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.67307692;0.69230769;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 600.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="600.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 6) · distinct=3</text><text x="40" y="315" font-size="17">Moves=27 (L=9 / R=18) · additions=15 · removals=12 · frame 36/52</text></g><g visibility="hidden" data-frame="36">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.69230769;0.71153846;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 600.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="600.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="330.00" y="234" width="270.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #2: [3, 5] · active [3, 6) · distinct=3</text><text x="40" y="315" font-size="17">Moves=27 (L=9 / R=18) · additions=15 · removals=12 · frame 37/52</text></g><g visibility="hidden" data-frame="37">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.71153846;0.73076923;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="270.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 600.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="600.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [3, 6) · distinct=3</text><text x="40" y="315" font-size="17">Moves=27 (L=9 / R=18) · additions=15 · removals=12 · frame 38/52</text></g><g visibility="hidden" data-frame="38">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.73076923;0.75000000;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 690.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="690.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [3, 7) · distinct=3</text><text x="40" y="315" font-size="17">Moves=28 (L=9 / R=19) · additions=16 · removals=12 · frame 39/52</text></g><g visibility="hidden" data-frame="39">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.75000000;0.76923077;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="450.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 780.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="780.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [3, 8) · distinct=4</text><text x="40" y="315" font-size="17">Moves=29 (L=9 / R=20) · additions=17 · removals=12 · frame 40/52</text></g><g visibility="hidden" data-frame="40">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.76923077;0.78846154;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="540.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 870.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="870.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [3, 9) · distinct=4</text><text x="40" y="315" font-size="17">Moves=30 (L=9 / R=21) · additions=18 · removals=12 · frame 41/52</text></g><g visibility="hidden" data-frame="41">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.78846154;0.80769231;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="330.00" y="150" width="630.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 330.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="330.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [3, 10) · distinct=5</text><text x="40" y="315" font-size="17">Moves=31 (L=9 / R=22) · additions=19 · removals=12 · frame 42/52</text></g><g visibility="hidden" data-frame="42">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.80769231;0.82692308;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="420.00" y="150" width="540.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 420.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="420.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [4, 10) · distinct=5</text><text x="40" y="315" font-size="17">Moves=32 (L=10 / R=22) · additions=19 · removals=13 · frame 43/52</text></g><g visibility="hidden" data-frame="43">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.82692308;0.84615385;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="510.00" y="150" width="450.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 510.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="510.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [5, 10) · distinct=5</text><text x="40" y="315" font-size="17">Moves=33 (L=11 / R=22) · additions=19 · removals=14 · frame 44/52</text></g><g visibility="hidden" data-frame="44">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.84615385;0.86538462;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="600.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 600.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="600.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [6, 10) · distinct=4</text><text x="40" y="315" font-size="17">Moves=34 (L=12 / R=22) · additions=19 · removals=15 · frame 45/52</text></g><g visibility="hidden" data-frame="45">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.86538462;0.88461538;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="600.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 600.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="600.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="600.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #6: [6, 9] · active [6, 10) · distinct=4</text><text x="40" y="315" font-size="17">Moves=34 (L=12 / R=22) · additions=19 · removals=15 · frame 46/52</text></g><g visibility="hidden" data-frame="46">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.88461538;0.90384615;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="600.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 600.00 143 v-15 M 960.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="600.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="960.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="780.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #5: [8, 11] · active [6, 10) · distinct=4</text><text x="40" y="315" font-size="17">Moves=34 (L=12 / R=22) · additions=19 · removals=15 · frame 47/52</text></g><g visibility="hidden" data-frame="47">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.90384615;0.92307692;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="600.00" y="150" width="450.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 600.00 143 v-15 M 1050.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="600.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1050.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="780.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #5: [8, 11] · active [6, 11) · distinct=5</text><text x="40" y="315" font-size="17">Moves=35 (L=12 / R=23) · additions=20 · removals=15 · frame 48/52</text></g><g visibility="hidden" data-frame="48">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.92307692;0.94230769;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="600.00" y="150" width="540.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 600.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="600.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="780.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #5: [8, 11] · active [6, 12) · distinct=5</text><text x="40" y="315" font-size="17">Moves=36 (L=12 / R=24) · additions=21 · removals=15 · frame 49/52</text></g><g visibility="hidden" data-frame="49">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.94230769;0.96153846;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="690.00" y="150" width="450.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 690.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="690.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="780.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #5: [8, 11] · active [7, 12) · distinct=4</text><text x="40" y="315" font-size="17">Moves=37 (L=13 / R=24) · additions=21 · removals=16 · frame 50/52</text></g><g visibility="hidden" data-frame="50">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.96153846;0.98076923;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="780.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 780.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="780.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="780.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #5: [8, 11] · active [8, 12) · distinct=3</text><text x="40" y="315" font-size="17">Moves=38 (L=14 / R=24) · additions=21 · removals=17 · frame 51/52</text></g><g visibility="hidden" data-frame="51">
+<animate attributeName="visibility" calcMode="discrete" values="hidden;visible;hidden;hidden" keyTimes="0;0.98076923;1.00000000;1" dur="13.000s" repeatCount="indefinite"/>
+<rect x="780.00" y="150" width="360.00" height="48" fill="#2dd4bf" fill-opacity="0.3" stroke="#5eead4"/>
+<path d="M 780.00 143 v-15 M 1140.00 143 v-15" stroke="#5eead4" stroke-width="2"/>
+<text x="780.00" y="122" text-anchor="middle" font-size="14" fill="#5eead4">L</text>
+<text x="1140.00" y="109" text-anchor="middle" font-size="14" fill="#5eead4">R</text>
+<rect x="780.00" y="234" width="360.00" height="8" fill="#fbbf24"/>
+<text x="40" y="278" font-size="19">Query #5: [8, 11] · active [8, 12) · distinct=3</text><text x="40" y="315" font-size="17">Moves=38 (L=14 / R=24) · additions=21 · removals=17 · frame 52/52</text></g></g></svg>

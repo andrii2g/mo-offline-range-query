@@ -1,6 +1,6 @@
 use clap::{Args, Parser, Subcommand};
 use mo_offline_range_query::{
-    Dataset, metrics,
+    Dataset, Strategy, metrics, trace,
     workload::{self, Workload},
 };
 use std::{fs, path::PathBuf};
@@ -14,6 +14,19 @@ struct Cli {
 
 #[derive(Subcommand)]
 enum Command {
+    /// Export a verified, standalone animated SVG. Trace work is never benchmarked.
+    Trace {
+        #[command(flatten)]
+        source: Source,
+        #[arg(long, value_enum, default_value = "alternating")]
+        strategy: TraceStrategy,
+        #[arg(long)]
+        block_size: Option<usize>,
+        #[arg(long, default_value_t = 240)]
+        max_frames: usize,
+        #[arg(long, default_value = "trace.svg")]
+        output: PathBuf,
+    },
     /// Compare naive, block Mo and alternating Mo; always verify every answer.
     Compare {
         #[command(flatten)]
@@ -26,6 +39,12 @@ enum Command {
         #[arg(long)]
         output: Option<PathBuf>,
     },
+}
+
+#[derive(Clone, Copy, clap::ValueEnum)]
+enum TraceStrategy {
+    Block,
+    Alternating,
 }
 
 #[derive(Args)]
@@ -68,6 +87,30 @@ impl Source {
 
 fn run() -> Result<(), String> {
     match Cli::parse().command {
+        Command::Trace {
+            source,
+            strategy,
+            block_size,
+            max_frames,
+            output,
+        } => {
+            let data = source.load()?;
+            let strategy = match strategy {
+                TraceStrategy::Block => Strategy::Block,
+                TraceStrategy::Alternating => Strategy::Alternating,
+            };
+            let trace = trace::collect(&data, strategy, block_size, max_frames)?;
+            let svg = trace::svg(&data, strategy, &trace);
+            fs::write(&output, &svg).map_err(|e| format!("{}: {e}", output.display()))?;
+            println!(
+                "{}: verified=true frames={}/{} trace buffers={} B SVG={} B",
+                output.display(),
+                trace.frames.len(),
+                trace.total_events,
+                trace.buffer_bytes,
+                svg.len()
+            );
+        }
         Command::Compare {
             source,
             block_size,
